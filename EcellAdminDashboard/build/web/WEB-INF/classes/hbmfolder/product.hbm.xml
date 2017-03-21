@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="classes.product" table="product">
+    <id name="pid" type="java.lang.Integer">
+      <generator class="assigned"/>
+    </id>
+    <property column="Visible" name="visible" type="java.lang.Integer"/>
+    <property column="Isfeatured" name="Isfeatured" type="java.lang.Integer"/>
+    <property column="OnSale" name="OnSale" type="java.lang.Integer"/>
+    <property column="Title" name="title" type="java.lang.String"/>
+    <property column="skucode" name="skucode" type="java.lang.String"/>
+    <property column="inventory" name="inventory" type="java.lang.Integer"/>
+    <property column="topcat1" name="topcat1" type="java.lang.String"/>
+    <property column="topcat2" name="topcat2" type="java.lang.String"/>
+    <property column="topcat3" name="topcat3" type="java.lang.String"/>
+    <property column="topcat4" name="topcat4" type="java.lang.String"/>
+    <property column="compatible_device" name="compatible_device" type="java.lang.String"/>
+    <property column="costprice" name="costprice" type="java.lang.Double"/>
+    <property column="discount" name="discount" type="java.lang.Double"/>
+    <property column="sellprice" name="sellprice" type="java.lang.Double"/>
+    <property column="views" name="views" type="java.lang.Integer"/>
+    <property column="Description" name="Description" type="java.lang.String"/>
+    <property column="cod" name="cod" type="java.lang.Integer"/>
+    <property column="rating" name="rating" type="java.lang.Integer"/>
+    <property column="sortorder" name="sortorder" type="java.lang.Integer"/>
+    <property column="AddedDate" name="AddedDate" type="java.util.Date"/>
+    <property column="AddedIp" name="AddedIp" type="java.lang.String"/>
+    <property column="ModifyDate" name="ModifyDate" type="java.util.Date"/>
+    <property column="ModifyIp" name="ModifyIp" type="java.lang.String"/>
+   
+    <many-to-one class="classes.productmodel" lazy="false" name="pcmd">
+      <column name="pc4id"/>
+    </many-to-one>
+    <set cascade="all" name="pci" lazy="false" table="prodct_images">
+      <key>
+        <column name="pid"/>
+      </key>
+      <one-to-many class="classes.product_images"/>
+    </set>
+   <set cascade="all" name="odi" lazy="false" table="orderitems">
+      <key>
+        <column name="pid"/>
+      </key>
+      <one-to-many class="classes.orderitems"/>
+    </set>
+  </class>
+</hibernate-mapping>

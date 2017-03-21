@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+   PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="classes.person" table="person">  
+  <id name="Id">  
+  <generator class="assigned"></generator>  
+  </id>  
+  
+  <property name="Name" column="Name"></property>
+  <property name="Password" column="Password"></property>
+  <property name="Email" column="Email"></property>  
+  
+  <joined-subclass name="classes.admin" table="admin">  
+  <key column="aid"></key>  
+  <property name="modifyip" column="modifyip"></property>
+  <property name="mshost" column="mshost"></property>  
+  <property name="msusername" column="msusername"></property>
+  <property name="mspass" column="mspass"></property>
+  <property name="backupdt" column="backupdt"></property>  
+  </joined-subclass>  
+   
+  <joined-subclass name="classes.users" table="users">  
+  <key column="uid"></key>  
+  <property name="Phone" column="Phone"></property>  
+  <property name="Query" column="Query"></property>
+  <property name="Edate" column="Edate"></property>
+  <property name="Eip" column="Eip"></property>
+  <property name="address" column="address"></property>
+  <property name="city" column="city"></property>
+  <property name="state" column="state"></property>
+  <property name="pin" column="pin"></property>
+  <property name="country" column="country"></property>
+  <property name="code" column="code"></property>
+  <property name="block" column="block"></property>
+  <property name="addeddate" column="addeddate"></property>  
+  <property name="addedip" column="addedip"></property>
+  
+  
+  </joined-subclass>  
+  
+  </class>
+</hibernate-mapping>

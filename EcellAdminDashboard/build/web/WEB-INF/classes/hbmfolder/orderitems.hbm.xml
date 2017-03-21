@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ <class name="classes.orderitems" table="orderitems">
+   <id name="Or_id" type="java.lang.Integer">
+         <generator class="assigned" />
+      </id>
+      <property name="Price" column="Price" type="java.lang.Double"/>
+      <property name="Qty" column="Qty" type="java.lang.Integer"/>
+      <property name="Total" column="Total" type="java.lang.Double"/>
+      <property name="Tax" column="Tax" type="java.lang.String"/>
+      
+      <many-to-one name="p" class="classes.product">
+          <column name="pid"/>
+      </many-to-one>
+      
+      
+     
+  </class>
+
+</hibernate-mapping>

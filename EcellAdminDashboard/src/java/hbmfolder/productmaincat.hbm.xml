@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="classes.productmaincat" table="productmaincat">
+   <id name="pc1id" type="java.lang.Integer">
+         <generator class="assigned" />
+      </id>
+      <property name="visible" column="Visible" type="java.lang.Integer"/>
+      <property name="title" column="Title" type="java.lang.String"/>
+      <property name="image" column="Image" type="java.lang.String"/>
+      <property name="sortorder" column="sortorder" type="java.lang.Integer"/>
+      <property name="AddedDate" column="AddedDate" type="java.util.Date"/>
+      <property name="AddedIp" column="AddedIp" type="java.lang.String"/>
+      <property name="ModifyDate" column="ModifyDate" type="java.util.Date"/>
+      <property name="ModifyIp" column="ModifyIp" type="java.lang.String"/>
+      
+      <set name="pcsc" table="prodctsubcat" lazy="false" cascade="all">
+          <key>
+              <column name="pc1id"/>
+          </key>
+          <one-to-many class="classes.productsubcat" />
+
+      </set>
+      
+  </class>
+</hibernate-mapping>

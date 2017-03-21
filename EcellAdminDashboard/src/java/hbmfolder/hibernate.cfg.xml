@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    
+    <hibernate-configuration>
+        <session-factory>
+            
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ecellstreet</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">0265</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        
+        <mapping resource="hbmfolder/productmaincat.hbm.xml"/>
+        <mapping resource="hbmfolder/productsubcat.hbm.xml"/>   
+        <mapping resource="hbmfolder/producttype.hbm.xml"/>  
+        <mapping resource="hbmfolder/productmodel.hbm.xml"/>  
+        <mapping resource="hbmfolder/product.hbm.xml"/>
+        <mapping resource="hbmfolder/product_images.hbm.xml"/>      
+        <mapping resource="hbmfolder/orderitems.hbm.xml"/>
+        <mapping resource="hbmfolder/person.hbm.xml"/>
+
+        
+        </session-factory>
+    </hibernate-configuration>
