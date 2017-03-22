@@ -28,21 +28,26 @@
     <property column="AddedIp" name="AddedIp" type="java.lang.String"/>
     <property column="ModifyDate" name="ModifyDate" type="java.util.Date"/>
     <property column="ModifyIp" name="ModifyIp" type="java.lang.String"/>
-   
     <many-to-one class="classes.productmodel" lazy="false" name="pcmd">
       <column name="pc4id"/>
     </many-to-one>
-    <set cascade="all" name="pci" lazy="false" table="prodct_images">
+    <set cascade="all" lazy="false" name="pci" table="prodct_images">
       <key>
         <column name="pid"/>
       </key>
       <one-to-many class="classes.product_images"/>
     </set>
-   <set cascade="all" name="odi" lazy="false" table="orderitems">
+    <set cascade="all" lazy="false" name="odi" table="orderitems">
       <key>
         <column name="pid"/>
       </key>
       <one-to-many class="classes.orderitems"/>
+    </set>
+    <set cascade="all" lazy="false" name="spo" table="specialoffer">
+      <key>
+        <column name="pid"/>
+      </key>
+      <one-to-many class="Utility.specialoffer"/>
     </set>
   </class>
 </hibernate-mapping>

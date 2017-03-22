@@ -5,7 +5,7 @@
 
 <hibernate-mapping>
 <class name="classes.product_images" table="product_images">
-   <id name="id" type="java.lang.Integer">
+      <id name="id" type="java.lang.Integer">
          <generator class="assigned" />
       </id>
       <property name="Image" column="Image" type="java.lang.String"/>

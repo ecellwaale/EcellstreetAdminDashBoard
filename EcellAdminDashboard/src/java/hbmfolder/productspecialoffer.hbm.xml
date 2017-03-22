@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Utility.specialoffer" table="specialoffer">
+    <property column="Visible" name="visible" type="java.lang.Integer"/>
+    <property column="pid" name="pid" type="java.lang.String"/>
+    <property column="offertime" name="offertime" type="java.lang.String"/>
+    <property column="saleprice" name="saleprice" type="java.lang.Integer"/>
+    <property column="active" name="active" type="java.lang.Integer"/>
+    <property column="stock" name="stock" type="java.lang.Integer"/>
+    <property column="sold" name="sold" type="java.lang.Integer"/>
+    <property column="publishdate" name="publishdate" type="java.util.Date"/>
+    <property column="expired" name="expired" type="java.lang.Integer"/>
+    <property column="sortorder" name="sortorder" type="java.lang.Integer"/>
+    <property column="AddedDate" name="AddedDate" type="java.util.Date"/>
+    <property column="AddedIp" name="AddedIp" type="java.lang.String"/>
+    <property column="ModifyDate" name="ModifyDate" type="java.util.Date"/>
+    <property column="ModifyIp" name="ModifyIp" type="java.lang.String"/>
+    <many-to-one class="classes.product" name="p">
+      <column name="pid"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

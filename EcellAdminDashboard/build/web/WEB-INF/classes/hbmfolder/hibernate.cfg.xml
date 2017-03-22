@@ -14,7 +14,6 @@
         <property name="connection.password">0265</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        
         <mapping resource="hbmfolder/productmaincat.hbm.xml"/>
         <mapping resource="hbmfolder/productsubcat.hbm.xml"/>   
         <mapping resource="hbmfolder/producttype.hbm.xml"/>  
@@ -23,7 +22,7 @@
         <mapping resource="hbmfolder/product_images.hbm.xml"/>      
         <mapping resource="hbmfolder/orderitems.hbm.xml"/>
         <mapping resource="hbmfolder/person.hbm.xml"/>
-
+     
         
         </session-factory>
     </hibernate-configuration>

@@ -5,6 +5,7 @@
  */
 package classes;
 
+import Utility.specialoffer;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
@@ -18,6 +19,15 @@ public class product {
     productmodel pcmd;
     Set<product_images> pci;
     Set<orderitems> odi;
+    Set<specialoffer> spo;
+
+    public Set<specialoffer> getSpo() {
+        return spo;
+    }
+
+    public void setSpo(Set<specialoffer> spo) {
+        this.spo = spo;
+    }
 
     public Set<orderitems> getOdi() {
         return odi;
@@ -41,105 +51,7 @@ public class product {
     public String toString() {
         return "product{" + "pid=" + pid + ", visible=" + visible + ", Isfeatured=" + Isfeatured + ", OnSale=" + OnSale + ", inventory=" + inventory + ", views=" + views + ", rating=" + rating + ", sortorder=" + sortorder + ", cod=" + cod + ", Title=" + Title + ", skucode=" + skucode + ", topcat1=" + topcat1 + ", topcat2=" + topcat2 + ", topcat3=" + topcat3 + ", topcat4=" + topcat4 + ", compatible_device=" + compatible_device + ", Description=" + Description + ", ModifyIp=" + ModifyIp + ", costprice=" + costprice + ", discount=" + discount + ", sellprice=" + sellprice + ", AddedDate=" + AddedDate + ", ModifyDate=" + ModifyDate + '}';
     }
-
     
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final product other = (product) obj;
-        if (this.pid != other.pid) {
-            return false;
-        }
-        if (this.visible != other.visible) {
-            return false;
-        }
-        if (this.Isfeatured != other.Isfeatured) {
-            return false;
-        }
-        if (this.OnSale != other.OnSale) {
-            return false;
-        }
-        if (this.inventory != other.inventory) {
-            return false;
-        }
-        if (this.views != other.views) {
-            return false;
-        }
-        if (this.rating != other.rating) {
-            return false;
-        }
-        if (this.sortorder != other.sortorder) {
-            return false;
-        }
-        if (this.cod != other.cod) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.costprice) != Double.doubleToLongBits(other.costprice)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.discount) != Double.doubleToLongBits(other.discount)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.sellprice) != Double.doubleToLongBits(other.sellprice)) {
-            return false;
-        }
-        if (!Objects.equals(this.Title, other.Title)) {
-            return false;
-        }
-        if (!Objects.equals(this.skucode, other.skucode)) {
-            return false;
-        }
-        if (!Objects.equals(this.topcat1, other.topcat1)) {
-            return false;
-        }
-        if (!Objects.equals(this.topcat2, other.topcat2)) {
-            return false;
-        }
-        if (!Objects.equals(this.topcat3, other.topcat3)) {
-            return false;
-        }
-        if (!Objects.equals(this.topcat4, other.topcat4)) {
-            return false;
-        }
-        if (!Objects.equals(this.compatible_device, other.compatible_device)) {
-            return false;
-        }
-        if (!Objects.equals(this.Description, other.Description)) {
-            return false;
-        }
-        if (!Objects.equals(this.ModifyIp, other.ModifyIp)) {
-            return false;
-        }
-        if (!Objects.equals(this.AddedDate, other.AddedDate)) {
-            return false;
-        }
-        if (!Objects.equals(this.ModifyDate, other.ModifyDate)) {
-            return false;
-        }
-        if (!Objects.equals(this.pcmd, other.pcmd)) {
-            return false;
-        }
-        if (!Objects.equals(this.pci, other.pci)) {
-            return false;
-        }
-        return true;
-    }
-    
-
     public Set<product_images> getPci() {
         return pci;
     }
